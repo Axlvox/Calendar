@@ -35,3 +35,17 @@ let dias = document.getElementById('days');
     dias.appendChild(calend);
 
   }
+
+  function mudaCor () {
+  let corHoliday = document.getElementsByClassName('day holiday');
+  for (let index = 0; index < corHoliday.length; index += 1) 
+  if (corHoliday[index].style.backgroundColor === 'rgb(255, 0, 0)') {
+  corHoliday[index].style.backgroundColor = 'rgb(238, 238, 238)';
+  } else {
+    corHoliday[index].style.backgroundColor = 'rgb(255, 0, 0)';
+  }
+  }
+
+
+  let feriado = document.querySelector('#btn-holiday');
+feriado.addEventListener('click', mudaCor);
