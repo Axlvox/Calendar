@@ -18,3 +18,20 @@ const decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
 
 // Escreva seu código abaixo.
 
+let dias = document.getElementById('days');
+  for (let index = 0; index < decemberDaysList.length; index += 1) {
+    let dia = decemberDaysList[index];
+
+    let calend = document.createElement('li');
+    calend.innerText = dia;
+    calend.classList.add('day');
+
+    if (dia === 24 || dia === 25 || dia === 31) {
+      calend.classList.add('holiday');
+    } if (dia === 4 || dia === 11 || dia === 18 || dia === 25) {
+      calend.classList.add('friday');
+    }
+
+    dias.appendChild(calend);
+
+  }
