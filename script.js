@@ -54,7 +54,7 @@ feriado.addEventListener('click', mudaCor);
 
 function mudaTexto () {
   let textoFriday = document.getElementsByClassName('day friday');
-  let sext = [4, 11, 18,25];
+  let sext = [4, 11, 18, 25];
   for (let index = 0; index < textoFriday.length; index += 1) 
   if (textoFriday[index].innerText === 'sextou') {
     textoFriday[index].innerText = sext[index];
@@ -65,3 +65,20 @@ function mudaTexto () {
 
   let sextou = document.querySelector('#btn-friday');
 sextou.addEventListener('click', mudaTexto);
+
+
+
+let zoomer = document.querySelectorAll('li.day');
+
+function zoom(event) {
+  event.target.style.fontSize = "30px";
+}
+
+function unzoom(event) {
+  event.target.style.fontSize = "20px";
+}
+
+for (let index = 0; index < zoomer.length; index += 1) {
+zoomer[index].addEventListener('mouseover', zoom);
+zoomer[index].addEventListener('mouseout', unzoom);
+}
