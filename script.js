@@ -49,3 +49,19 @@ let dias = document.getElementById('days');
 
   let feriado = document.querySelector('#btn-holiday');
 feriado.addEventListener('click', mudaCor);
+
+
+
+function mudaTexto () {
+  let textoFriday = document.getElementsByClassName('day friday');
+  let sext = [4, 11, 18,25];
+  for (let index = 0; index < textoFriday.length; index += 1) 
+  if (textoFriday[index].innerText === 'sextou') {
+    textoFriday[index].innerText = sext[index];
+  } else {
+    textoFriday[index].innerText = 'sextou';
+  }
+  }
+
+  let sextou = document.querySelector('#btn-friday');
+sextou.addEventListener('click', mudaTexto);
