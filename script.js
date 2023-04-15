@@ -68,7 +68,7 @@ sextou.addEventListener('click', mudaTexto);
 
 
 
-let zoomer = document.querySelectorAll('li.day');
+let zoomer = document.getElementsByClassName('day');
 
 function zoom(event) {
   event.target.style.fontSize = "30px";
@@ -82,3 +82,18 @@ for (let index = 0; index < zoomer.length; index += 1) {
 zoomer[index].addEventListener('mouseover', zoom);
 zoomer[index].addEventListener('mouseout', unzoom);
 }
+
+
+function select (event) {
+  const task = event.target;
+  if (task.classList.contains('selected')) {
+    task.classList.remove('selected');
+  } else {
+    task.classList.add('selected');
+}
+}
+  let task = document.querySelectorAll('.task');
+  for (let index = 0; index < task.length; index += 1) {
+task[index].addEventListener('click', select)
+
+  }
